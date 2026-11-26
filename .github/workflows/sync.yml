@@ -29,8 +29,14 @@ jobs:
           UPSTREAM_URL: "https://github.com/Evolution-X/art"
           UPSTREAM_BRANCH: "cnb"
           TARGET_BRANCH: "cnb"
+          SYNC_MODE: "merge"
+          SYNC_REASON: "同名分支同步"
         run: |
           set -euo pipefail
+          if [ "$SYNC_MODE" = "skip" ]; then
+            echo "::notice::$SYNC_REASON"
+            exit 0
+          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
