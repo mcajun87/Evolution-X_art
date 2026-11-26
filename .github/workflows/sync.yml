@@ -26,7 +26,7 @@ jobs:
 
       - name: Merge upstream
         env:
-          UPSTREAM_URL: "Evolution-X/art"
+          UPSTREAM_URL: "https://github.com/Evolution-X/art"
           UPSTREAM_BRANCH: "cnb"
           TARGET_BRANCH: "cnb"
         run: |
